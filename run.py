@@ -36,15 +36,24 @@ def display_score(correct_guesses, guesses):
 
     print("Answers: ", end="")
     for i in questions:
-        print(questions.get(i), end="")
+        print(questions.get(i), end=" ")
     print()
     print("Guesses: ", end="")
     for i in guesses:
-        print((i), end="")
+        print((i), end=" ")
     print()
+
+    score = int((correct_guesses/len(questions))*100)
+    print("Your Score is:"+str(score)+"%")
 #-----------------------
 def play_again():
-    pass
+    response = input("Do you want to play again? (yes or no): ")
+    response = response.upper()
+
+    if response =="YES":
+        return True
+    else:
+        return False
 #-----------------------
 
 # dictionary created for the questions
@@ -64,3 +73,8 @@ options = [["A. 20%", "B. 40%","C. 50%","D. 70%"],
            ["A. Mariana Trench", "B. Kermadec Trench", "C. South Sandwich Trench", "D. Izu-Ogasawara Trench"]]
 
 new_game()
+
+while play_again():
+    new_game()
+
+print("BYYYYEEEE!")
