@@ -33,12 +33,14 @@ def display_score(correct_guesses, guesses):
     print("-----------------------")
     print("Results")
     print("-----------------------")
-    print("Answers: ")
+
+    print("Answers: ", end="")
     for i in questions:
-        print(questions.get(i))
-        print()
+        print(questions.get(i), end="")
+    print()
+    print("Guesses: ", end="")
     for i in guesses:
-        print(guesses.get(i))
+        print((i), end="")
     print()
 #-----------------------
 def play_again():
